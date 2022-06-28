@@ -11,6 +11,9 @@ namespace EjemploWebASPNET
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ServiceReference1.Service1Client servicio = new Connection().CrearConexion();
+            GridView1.DataSource = servicio.obtenerUsuarios();
+            GridView1.DataBind();
 
         }
     }
